@@ -1,0 +1,58 @@
+<html>
+
+<head>
+<title>Input</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+   <div class="wrapper">
+      <p>UMIRZAKOV MADIYAR LAB 3 SECURITY</p>
+      <hr>
+      <form name="Input">
+                  <input type="text" placeholder="p" name="p" size="20">
+                  <input type="text" placeholder="q" name="q" size="20">
+            <input type="text" required name="name" placeholder="encrypt message" id="">
+               <div onClick="openNew()" class="button">Submit</div>
+      </form>
+      <p>&nbsp;</p>
+
+
+      <div class="init-res">
+         <div>
+            <span>Computed the totient phi(n) = (p-1)*(q-1): n = p * q </span>
+            <span id="N"></span>
+         </div>
+   
+         <div>
+            <span>(p-1)*(q-1) phi: </span>
+            <span id="phi"></span>
+         </div>
+   
+   
+         <div>
+            <span>log2(phi(n) + 1): </span>
+            <span id="e"></span>
+         </div>
+   
+
+         <div>
+            <span>(e*d)mod(phi): </span>
+            <span id="d"></span>
+         </div>
+      </div>
+
+
+
+
+      <div class="res">
+
+      </div>
+   </div>
+
+
+   <script src="rsa.js"></script>
+</body>
+
+</html>
