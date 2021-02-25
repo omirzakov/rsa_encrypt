@@ -104,6 +104,7 @@ function openNew()
    var d=calculate_d(phi,e);
    const textArr = encrypt.value.split('');
    let res = document.querySelector(".res");
+   let res_2 = document.querySelector(".res-2");
    res.innerHTML = "";
 
    textArr.forEach((elem, i) => {
@@ -116,6 +117,17 @@ function openNew()
        let finalText = `<div>${text} <span>${letter} ${i}</span> | ${index}^${e}mod${N} =  ${(Math.pow(index, e) % N)}</div>`;
        res.innerHTML = finalText;
    })
+
+   textArr.forEach((elem, i) => {
+      const letter = elem.toLowerCase();
+
+      const index = alphabet.indexOf(letter) + 1;
+
+      const text = res.innerHTML;
+
+      let finalText = `<div>${text} <span>${letter} ${i}</span> | ${index}^${d}mod${N} =  ${(Math.pow(index, d) % N)}</div>`;
+      res_2.innerHTML = finalText;
+  })
 
    
    document.getElementById("N").innerHTML = N;

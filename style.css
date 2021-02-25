@@ -22,11 +22,12 @@ input {
     outline: none;
 }
 
-.res {
+.res, .res-2 {
     display: flex;
 
     transition: .3s;
 }
+
 
 div {
     font-size: 20px;
@@ -62,8 +63,9 @@ div {
     border-radius: 6px;
 }
 
-.res {
+.res, .res-2 {
     padding: 20px;
+    margin-bottom: 10px;
     background: #fff;
     font-size: 20px;
     width: 450px;
