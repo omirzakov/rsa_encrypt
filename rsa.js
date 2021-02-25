@@ -105,6 +105,7 @@ function openNew()
    const textArr = encrypt.value.split('');
    let res = document.querySelector(".res");
    let res_2 = document.querySelector(".res-2");
+   let private_array = [];
    res.innerHTML = "";
 
    textArr.forEach((elem, i) => {
@@ -113,20 +114,24 @@ function openNew()
        const index = alphabet.indexOf(letter) + 1;
 
        const text = res.innerHTML;
+       let ans = (Math.pow(index, e) % N);
 
-       let finalText = `<div>${text} <span>${letter} ${i}</span> | ${index}^${e}mod${N} =  ${(Math.pow(index, e) % N)}</div>`;
+       let finalText = `<div>${text} <span>${letter} ${i}</span> | ${index}^${e}mod${N} =  ${ans}</div>`;
+       private_array.push(ans);
+
        res.innerHTML = finalText;
-   })
+   });
 
-   textArr.forEach((elem, i) => {
-      const letter = elem.toLowerCase();
+   console.log(private_array);
 
-      const index = alphabet.indexOf(letter) + 1;
+   private_array.forEach((elem, i) => {
+      console.log(elem)
+      let box = document.createElement("div");
 
-      const text = res.innerHTML;
+      let privateText = `<div> C ${i} </span> | ${elem}^${d}mod${N} =  ${(Math.pow(elem, d) % N)}</div>`;
+      box.innerHTML = privateText;
 
-      let finalText = `<div>${text} <span>${letter} ${i}</span> | ${index}^${d}mod${N} =  ${(Math.pow(index, d) % N)}</div>`;
-      res_2.innerHTML = finalText;
+      res_2.appendChild(box);
   })
 
    
@@ -134,6 +139,5 @@ function openNew()
    document.getElementById("phi").innerHTML = phi;
    document.getElementById("e").innerHTML = e;
    document.getElementById("d").innerHTML = d;
-   document.getElementById("res").innerHTML = "";
 
 }

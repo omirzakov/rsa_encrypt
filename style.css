@@ -70,3 +70,7 @@ div {
     font-size: 20px;
     width: 450px;
 }
+
+.res-2 {
+    display: block !important;
+}
